@@ -6,5 +6,5 @@ export const getHeroesByPublisher = (publisher) => {
     throw new Error(`Publisher ${publisher} is not valid`);
   }
 
-  return heroes.filter((hero) => (hero.publisher = publisher));
+  return heroes.filter((hero) => hero.publisher === publisher);
 };
