@@ -11,7 +11,12 @@ export const HeroScreen = ({ history }) => {
   }
 
   const handleReturn = () => {
-    history.goBack();
+    if (history.length <= 2) {
+      hero.publisher === "Marvel Comics" && history.push("/");
+      hero.publisher === "DC Comics" && history.push("/dc");
+    } else {
+      history.goBack();
+    }
   };
 
   return (
