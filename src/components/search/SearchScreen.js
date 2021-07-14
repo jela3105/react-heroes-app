@@ -4,6 +4,7 @@ import { HeroCard } from "../heroes/HeroCard";
 
 export const SearchScreen = () => {
   const heroesFiltered = heroes;
+  const handleSearch = () => {};
   return (
     <div>
       <h1>Search Screen</h1>
@@ -12,7 +13,7 @@ export const SearchScreen = () => {
         <div className="col-5">
           <h4>Search form</h4>
           <hr />
-          <form action="">
+          <form onSubmit={handleSearch}>
             <input
               type="text"
               placeholder="Find you hero"
@@ -30,7 +31,7 @@ export const SearchScreen = () => {
           <h4>Results</h4>
           <hr />
           {heroesFiltered.map((hero) => (
-            <HeroCard key={hero.id} {...hero} />
+            <HeroCard key={hero.id} hero={hero} />
           ))}
         </div>
       </div>
