@@ -1,6 +1,6 @@
 import React from "react";
 import queryString from "query-string";
-import { heroes } from "../../data/heroes";
+import { getHeroesByName } from "../../selectors/getHeroesByName";
 import { HeroCard } from "../heroes/HeroCard";
 import { useForm } from "../../hooks/useForm";
 import { useLocation } from "react-router-dom";
@@ -14,7 +14,7 @@ export const SearchScreen = ({ history }) => {
   });
   const { searchText } = formValues;
 
-  const heroesFiltered = heroes;
+  const heroesFiltered = getHeroesByName(searchText);
 
   const handleSearch = (e) => {
     e.preventDefault();
